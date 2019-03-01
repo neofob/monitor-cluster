@@ -28,9 +28,9 @@ On `graphite` software stack
 ============================
 You can run [`docker-graphite`][0] separately and add it as a datasource to Grafana here.
 
-
-
 __author__: *tuan t. pham*
+
+
 [0]: https://github.com/neofob/docker-graphite
 [1]: https://github.com/grafana/grafana-docker
 [2]: https://hub.docker.com/_/influxdb
