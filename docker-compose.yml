@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  grafana:
+    image: grafana/grafana:${GRAFANA_TAG}
+    container_name: grafana
+    hostname: grafana
+    environment:
+      GF_SERVER_ROOT_URL: http://grafana.server.name
+    volumes:
+      - ./grafana_data:/var/lib/grafana
+    ports:
+      - 3000:3000
+    # 1000 is the 1st UID in Ubuntu/Debian system
+    user: "1000"
+
+  influxdb:
+    image: influxdb:${INFLUXDB_TAG}
+    container_name: influxdb
+    hostname: influxdb
+    environment:
+      INFLUXDB_GRAPHITE_ENABLED: "true"
+    volumes:
+      - ./influxdb_data:/var/lib/influxdb
+    ports:
+      - 8086:8086
+      - 2003:2003
+
